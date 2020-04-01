@@ -2,6 +2,8 @@
 // Generator token: 10BE3573-1514-4C36-9D1C-5A225CD40393
 
 #include <Rcpp.h>
+#include <string>
+#include <set>
 
 using namespace Rcpp;
 
@@ -657,10 +659,9 @@ END_RCPP
 }
 // cpp_segment_intersection
 List cpp_segment_intersection(NumericVector ax0, NumericVector ay0, NumericVector ax1, NumericVector ay1, NumericVector bx0, NumericVector by0, NumericVector bx1, NumericVector by1);
-RcppExport SEXP _geom_cpp_segment_intersection(SEXP ax0SEXP, SEXP ay0SEXP, SEXP ax1SEXP, SEXP ay1SEXP, SEXP bx0SEXP, SEXP by0SEXP, SEXP bx1SEXP, SEXP by1SEXP) {
+static SEXP _geom_cpp_segment_intersection_try(SEXP ax0SEXP, SEXP ay0SEXP, SEXP ax1SEXP, SEXP ay1SEXP, SEXP bx0SEXP, SEXP by0SEXP, SEXP bx1SEXP, SEXP by1SEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< NumericVector >::type ax0(ax0SEXP);
     Rcpp::traits::input_parameter< NumericVector >::type ay0(ay0SEXP);
     Rcpp::traits::input_parameter< NumericVector >::type ax1(ax1SEXP);
@@ -671,14 +672,37 @@ BEGIN_RCPP
     Rcpp::traits::input_parameter< NumericVector >::type by1(by1SEXP);
     rcpp_result_gen = Rcpp::wrap(cpp_segment_intersection(ax0, ay0, ax1, ay1, bx0, by0, bx1, by1));
     return rcpp_result_gen;
-END_RCPP
+END_RCPP_RETURN_ERROR
+}
+RcppExport SEXP _geom_cpp_segment_intersection(SEXP ax0SEXP, SEXP ay0SEXP, SEXP ax1SEXP, SEXP ay1SEXP, SEXP bx0SEXP, SEXP by0SEXP, SEXP bx1SEXP, SEXP by1SEXP) {
+    SEXP rcpp_result_gen;
+    {
+        Rcpp::RNGScope rcpp_rngScope_gen;
+        rcpp_result_gen = PROTECT(_geom_cpp_segment_intersection_try(ax0SEXP, ay0SEXP, ax1SEXP, ay1SEXP, bx0SEXP, by0SEXP, bx1SEXP, by1SEXP));
+    }
+    Rboolean rcpp_isInterrupt_gen = Rf_inherits(rcpp_result_gen, "interrupted-error");
+    if (rcpp_isInterrupt_gen) {
+        UNPROTECT(1);
+        Rf_onintr();
+    }
+    bool rcpp_isLongjump_gen = Rcpp::internal::isLongjumpSentinel(rcpp_result_gen);
+    if (rcpp_isLongjump_gen) {
+        Rcpp::internal::resumeJump(rcpp_result_gen);
+    }
+    Rboolean rcpp_isError_gen = Rf_inherits(rcpp_result_gen, "try-error");
+    if (rcpp_isError_gen) {
+        SEXP rcpp_msgSEXP_gen = Rf_asChar(rcpp_result_gen);
+        UNPROTECT(1);
+        Rf_error(CHAR(rcpp_msgSEXP_gen));
+    }
+    UNPROTECT(1);
+    return rcpp_result_gen;
 }
 // cpp_orientation_index
 IntegerVector cpp_orientation_index(NumericVector ax, NumericVector ay, NumericVector bx, NumericVector by, NumericVector px, NumericVector py);
-RcppExport SEXP _geom_cpp_orientation_index(SEXP axSEXP, SEXP aySEXP, SEXP bxSEXP, SEXP bySEXP, SEXP pxSEXP, SEXP pySEXP) {
+static SEXP _geom_cpp_orientation_index_try(SEXP axSEXP, SEXP aySEXP, SEXP bxSEXP, SEXP bySEXP, SEXP pxSEXP, SEXP pySEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< NumericVector >::type ax(axSEXP);
     Rcpp::traits::input_parameter< NumericVector >::type ay(aySEXP);
     Rcpp::traits::input_parameter< NumericVector >::type bx(bxSEXP);
@@ -687,7 +711,49 @@ BEGIN_RCPP
     Rcpp::traits::input_parameter< NumericVector >::type py(pySEXP);
     rcpp_result_gen = Rcpp::wrap(cpp_orientation_index(ax, ay, bx, by, px, py));
     return rcpp_result_gen;
-END_RCPP
+END_RCPP_RETURN_ERROR
+}
+RcppExport SEXP _geom_cpp_orientation_index(SEXP axSEXP, SEXP aySEXP, SEXP bxSEXP, SEXP bySEXP, SEXP pxSEXP, SEXP pySEXP) {
+    SEXP rcpp_result_gen;
+    {
+        Rcpp::RNGScope rcpp_rngScope_gen;
+        rcpp_result_gen = PROTECT(_geom_cpp_orientation_index_try(axSEXP, aySEXP, bxSEXP, bySEXP, pxSEXP, pySEXP));
+    }
+    Rboolean rcpp_isInterrupt_gen = Rf_inherits(rcpp_result_gen, "interrupted-error");
+    if (rcpp_isInterrupt_gen) {
+        UNPROTECT(1);
+        Rf_onintr();
+    }
+    bool rcpp_isLongjump_gen = Rcpp::internal::isLongjumpSentinel(rcpp_result_gen);
+    if (rcpp_isLongjump_gen) {
+        Rcpp::internal::resumeJump(rcpp_result_gen);
+    }
+    Rboolean rcpp_isError_gen = Rf_inherits(rcpp_result_gen, "try-error");
+    if (rcpp_isError_gen) {
+        SEXP rcpp_msgSEXP_gen = Rf_asChar(rcpp_result_gen);
+        UNPROTECT(1);
+        Rf_error(CHAR(rcpp_msgSEXP_gen));
+    }
+    UNPROTECT(1);
+    return rcpp_result_gen;
+}
+
+// validate (ensure exported C++ functions exist before calling them)
+static int _geom_RcppExport_validate(const char* sig) { 
+    static std::set<std::string> signatures;
+    if (signatures.empty()) {
+        signatures.insert("List(*cpp_segment_intersection)(NumericVector,NumericVector,NumericVector,NumericVector,NumericVector,NumericVector,NumericVector,NumericVector)");
+        signatures.insert("IntegerVector(*cpp_orientation_index)(NumericVector,NumericVector,NumericVector,NumericVector,NumericVector,NumericVector)");
+    }
+    return signatures.find(sig) != signatures.end();
+}
+
+// registerCCallable (register entry points for exported C++ functions)
+RcppExport SEXP _geom_RcppExport_registerCCallable() { 
+    R_RegisterCCallable("geom", "_geom_cpp_segment_intersection", (DL_FUNC)_geom_cpp_segment_intersection_try);
+    R_RegisterCCallable("geom", "_geom_cpp_orientation_index", (DL_FUNC)_geom_cpp_orientation_index_try);
+    R_RegisterCCallable("geom", "_geom_RcppExport_validate", (DL_FUNC)_geom_RcppExport_validate);
+    return R_NilValue;
 }
 
 static const R_CallMethodDef CallEntries[] = {
@@ -747,6 +813,7 @@ static const R_CallMethodDef CallEntries[] = {
     {"_geom_cpp_validate_provider", (DL_FUNC) &_geom_cpp_validate_provider, 1},
     {"_geom_cpp_segment_intersection", (DL_FUNC) &_geom_cpp_segment_intersection, 8},
     {"_geom_cpp_orientation_index", (DL_FUNC) &_geom_cpp_orientation_index, 6},
+    {"_geom_RcppExport_registerCCallable", (DL_FUNC) &_geom_RcppExport_registerCCallable, 0},
     {NULL, NULL, 0}
 };
 
